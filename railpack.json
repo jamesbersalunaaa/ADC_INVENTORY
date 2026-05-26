@@ -1,0 +1,10 @@
+{
+  "php": {
+    "extensions": [
+      "gd",
+      "zip",
+      "bcmath",
+      "pdo_mysql"
+    ]
+  }
+}
