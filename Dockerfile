@@ -6,11 +6,12 @@ RUN apt-get update && apt-get install -y \
     libzip-dev zip unzip libonig-dev curl \
     && docker-php-ext-install pdo pdo_mysql mbstring zip
 
-# Node.js for frontend assets
+Install composer directly
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+Node.js for frontend assets
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
-
-COPY --from=composer:latest /usr/local/bin/composer /usr/local/bin/composer
 
 COPY . .
 
